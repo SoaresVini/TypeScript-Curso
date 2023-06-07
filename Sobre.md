@@ -6,7 +6,7 @@
 
 * Seu volume é calculado multiplicando a quantidade 
 
-=======================Clase em JS=============================
+=======================JS=============================
 
 Os valores não podem ser modificados depois de uma instancia de negociação ser criada
 
@@ -63,6 +63,24 @@ const negociacao1 = new Negociacao(new Date);
 console.log(negociacao1.volume);
 
 
+expessão regular 
+
+se adicona entre //g 
+
+Serve para selecioar combinações de caracteres em uma string e tambem podem ser consideradas como objetos
+
+Se ficar na duvida: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_expressions
+
+.pop remove o ultimo intem do array
+
+Solução JS
+    para que ao retornar o array(objeto) não ser possivel excluir a lista que esta encapsulada, sped operator(...) cada item dessa lista e botnado em uma nova lista
+
+    listaNegociacao(): Array<Negociacao>{
+        
+            return [...this.negociacoes]
+        } 
+
 =======================problemas do JS=============================
 
 * Nada me impede que eu tente adiconar um valor em qualquer variavel, mesmo isso não sendo possivel por conta dos já get serem do mesmo nome da variavel Privada. Assim só estourando erro em tempo de execução
@@ -109,4 +127,79 @@ any - qualquer coisa
 O TP passa para um atributo implicitamente como any
 
 Tipagem para Elementos HTML 
+
+
+Tipo Data tem a data como "yyyy,mm,dd"
+
+
+O TS ele entende que um medtodo vai retornar algo ou não e ele tipa conforme o retorno
+
+EX. 
+
+- Se o retorno for uma String ele vai subentender que o retorno do metodo é uma String
+- Se não haver retorno ele vai ser do tipo void
+
+Porem isso não é bom, é sempre bom tipar os retornos para que nã haja nenhum erro de retorno. 
+
+Tipar parametros de metodos,construtor, propriedades da classe e retorno de metodo e mesmo quando for do tipo any,, é bom adiconar 
+
+    variavel criada dentro de um metodo não é obrigatorio o TS vai inferir o tipo da variavel
+
+A negociação não pode ser exluida, e por isso não pode ser usado o Array padrão do JS
+
+
+private negociacoes = [] ; - aqui ta falando que é uma variavel do tipo any com abre e fecha colchetes
+
+
+uma array em TS
+
+private negociacoes: Array<Negociacao> = [] ; == private negociacoes: Negociacao[] = [];
+
+Tipo de Array só para leitura ReadonlyArray
+
+Generics <>
+
+Jeito "normal"
+
+    private _data : Date;
+    private _quantidade : number;
+    private _valor : number
+
+    constructor(data : Date, quantidade : number, valor : number){
+        this._data = data;
+        this._quantidade = quantidade;
+        this._valor = valor
+    }
+
+jeito inteligente
+
+Coloca o modificicador indica par ao TS que por debaixo dos panos vai cria uma propriedade da classe que contenha o mesmo nome do contrutor e vai fazer a atribuição
+
+ constructor(
+        private _data : Date,
+        private _quantidade : number, 
+        private _valor : number
+    ){}
+
+
+readonly valor que é de somente leitura, após a atribuição ninguem vai poder mexer
+
+
+o get e o readonly tem esse BO
+
+O date é um objeto, e por isso eu tenho metodos para setar ele, mesmo a variavel sendo somente para leitura
+
+para atribuição ele ta bloqueado, mas pelo metodo o TS não tem oq fazer
+
+
+=========Programação defensiva==================
+  // a data vai ser igual a que foi vai ser identica a data que esta encapsulado dentro da negociaçõa, porem em uma nova referencia. tanto faz usar o setData ou o getData
+
+  se usar o set ou get vai ser passado para o clone da data a data da negociação vai continuar correta
+
+        const data = new Date(this._data.getTime());
+
+Usar Type em Node
+
+===========================Final do primeiro curso====================================
 

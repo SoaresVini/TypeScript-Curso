@@ -1,5 +1,9 @@
 export class Negociacao{
 
+    /* 
+
+    Jeito "normal"
+
     private _data : Date;
     private _quantidade : number;
     private _valor : number
@@ -9,21 +13,45 @@ export class Negociacao{
         this._quantidade = quantidade;
         this._valor = valor
     }
-
-    get data(){
+    get data(): Date{
         return this._data
     }
 
-    get quantidade(){
+    get quantidade(): Number{
         return this._quantidade
     }
 
-    get valor(){
+    get valor(): Number{
         return this._valor
     }
 
-    get volume(){
+    get volume(): Number{
         return this._quantidade * this._valor
+    }
+    */
+
+
+    //private podeDeixarAquiTambem : string
+    constructor(
+        //  Coloca o modificicador indica par ao TS que por debaixo dos panos vai cria uma propriedade da classe que contenha o mesmo nome do contrutor e vai fazer a atribuição
+
+        private _data : Date,
+        // readonly valor que é de somente leitura em casos que precise adiconar alguma logica na hora da leitura, ai vc precisa usar o get
+        
+        public readonly quantidade : number, 
+        public readonly valor : number
+    ){}
+
+    get volume(): Number{
+        return this.quantidade * this.valor
+    }
+
+    get data(): Date {
+
+        // a data vai ser igual a que foi vai ser identica a data que esta encapsulado dentro da negociaçõa, porem em uma nova referencia. tanto faz usar o setData ou o getData
+
+        const data = new Date(this._data.getTime());
+        return data
     }
 
 }
