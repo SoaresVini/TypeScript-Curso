@@ -1,7 +1,7 @@
 export class Negociacoes {
     constructor() {
         //Guarda uma lista de negociações
-        //private negociacoes: Array<Negociacao> = [] ; 
+        // private negociacoes: Array<Negociacao> = [] ; 
         this.negociacoes = [];
     }
     adiciona(negociacao) {

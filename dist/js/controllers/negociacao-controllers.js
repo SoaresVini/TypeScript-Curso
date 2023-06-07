@@ -15,6 +15,10 @@ export class NegociacaoController {
         this.limparForm();
     }
     criaNegociacao() {
+        var teste;
+        let num;
+        const arra = [];
+        arra.push("teste");
         const exp = /-/g; //expessão regular 
         const date = new Date(this.inputData.value.replace(exp, ','));
         const quantidade = Number(this.inputQuantidade.value);

@@ -3,7 +3,7 @@ import { Negociacao } from "./negociacao.js";
 export class Negociacoes{
     //Guarda uma lista de negociações
 
-    //private negociacoes: Array<Negociacao> = [] ; 
+    // private negociacoes: Array<Negociacao> = [] ; 
 
     private negociacoes: Negociacao[] = [];
 
@@ -26,12 +26,10 @@ export class Negociacoes{
     // Solução TS
 
     listaNegociacao(): ReadonlyArray<Negociacao>{
-        
-        return this.negociacoes
-    } 
 
         
-  
+        return this.negociacoes
+    }  
 }
 
 

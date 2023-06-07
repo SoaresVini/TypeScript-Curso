@@ -24,7 +24,16 @@ export class NegociacaoController {
         
     }
 
+
+
     criaNegociacao(): Negociacao{
+        var teste
+        let num: number;
+        const arra = [];
+
+        arra.push("teste")
+
+        
         const exp = /-/g //expessão regular 
         const date = new Date(this.inputData.value.replace(exp, ','))
 
