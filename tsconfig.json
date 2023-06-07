@@ -1,0 +1,20 @@
+//Configurações/opções de compilação
+{
+    /*
+    Pasta onde vai ser salvo os arquivos JS
+    e a versão do EcmaScript.
+
+    enrqanto tiver erro não gera um arquivo JS
+    */
+    "compilerOptions": {
+        "outDir": "dist/js",
+        "target": "ES6",
+        "noEmitOnError": true,
+        "noImplicitAny": true   
+    },
+
+    // Todos os arquivos que estão em app e joga para dist/js
+    "include": ["app/**/*"]
+
+
+}
