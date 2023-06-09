@@ -53,4 +53,12 @@ export class Negociacao{
         const data = new Date(this._data.getTime());
         return data
     }
+
+    public static criaDe(dataString :string, quantidadeString :string, valorString:string ): Negociacao{
+        const exp = /-/g //expessão regular 
+        const date = new Date(dataString.replace(exp, ','))
+        const quantidade = Number(quantidadeString)
+        const valor = Number(valorString)
+        return new Negociacao(date, quantidade, valor);
+    }
 }

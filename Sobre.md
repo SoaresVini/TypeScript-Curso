@@ -191,6 +191,28 @@ O date é um objeto, e por isso eu tenho metodos para setar ele, mesmo a variave
 
 para atribuição ele ta bloqueado, mas pelo metodo o TS não tem oq fazer
 
+Se o programador não implementar esse metodo, ele vai receber essa mengsam pelo Console 
+    throw('Classe filha precisa implementar o metodo')
+
+Com os paradigmais do POO podemos tornar o sistema mais seguro e com menos erros por pate do programador, além de facilitar a implementação de classes já que podemos utilizar da herança para não ficar copiando e colando codigo
+
+
+pai protected -> filha public ou protected
+
+pai public -> public 
+
+
+Sempre bom tipar tudo e deixar claro o modificador de acesso memso sendo public
+
+
+Enumerations
+
+enum
+
+Posso criar constantes com os dias da semena e eu posso usalas em qualquer classe do meu projeto
+
+
+Metodo static, posso chamar ela direto pela instancia da classe
 
 =========Programação defensiva==================
   // a data vai ser igual a que foi vai ser identica a data que esta encapsulado dentro da negociaçõa, porem em uma nova referencia. tanto faz usar o setData ou o getData
