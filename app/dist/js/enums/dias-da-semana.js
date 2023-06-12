@@ -7,9 +7,4 @@ export var DiaDaSemana;
     DiaDaSemana[DiaDaSemana["SEXTA"] = 5] = "SEXTA";
     DiaDaSemana[DiaDaSemana["SABADO"] = 6] = "SABADO";
     DiaDaSemana[DiaDaSemana["DOMINGO"] = 0] = "DOMINGO";
-    /*
-        por padrão eles ja recebem começando de 0, esquece essa parada e bota os valores que for utilizado em cada constante
-
-        se passar o valor de uma só constante,
-    */
 })(DiaDaSemana || (DiaDaSemana = {}));

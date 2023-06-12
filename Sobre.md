@@ -214,6 +214,15 @@ Posso criar constantes com os dias da semena e eu posso usalas em qualquer class
 
 Metodo static, posso chamar ela direto pela instancia da classe
 
+
+decoration
+
+Vou criar uma função que vai utilizada para verificar o tempo de execução
+
+posso usar tambem um performance.now() - no começo e no fim de um metodo
+
+
+
 =========Programação defensiva==================
   // a data vai ser igual a que foi vai ser identica a data que esta encapsulado dentro da negociaçõa, porem em uma nova referencia. tanto faz usar o setData ou o getData
 

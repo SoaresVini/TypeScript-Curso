@@ -7,14 +7,17 @@
     enrqanto tiver erro não gera um arquivo JS
     */
     "compilerOptions": {
-        "outDir": "dist/js",
+        "outDir": "app/dist/js",
         "target": "ES6",
         "noEmitOnError": true,
-        "noImplicitAny": true   
+        "noImplicitAny": true,  
+        "removeComments": true,
+        "strictNullChecks": true,
+        "experimentalDecorators": true
     },
 
     // Todos os arquivos que estão em app e joga para dist/js
-    "include": ["app/**/*"]
+    "include": ["app/src/**/*"]
 
 
 }
