@@ -4,20 +4,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+import { domInjector } from "../decorations/dom-injector.js";
+import { inspect } from "../decorations/inspect.js";
 import { logarTempoDeExecucao } from "../decorations/logar-tempo-de-execucao.js";
 import { DiaDaSemana } from "../enums/dias-da-semana.js";
 import { Negociacao } from "../models/negociacao.js";
 import { Negociacoes } from "../models/negociacoes.js";
+import { NegociacoesService } from "../services/negociacoes-service.js";
+import { imprimir } from "../util/imprimir.js";
 import { mensagemView } from "../views/mensagem-view.js";
 import { NegociacoesView } from "../views/negociacoes-view.js";
 export class NegociacaoController {
     constructor() {
         this.negociacoes = new Negociacoes();
-        this.negociacoesView = new NegociacoesView('#negociaçõesView', true);
+        this.negociacoesView = new NegociacoesView('#negociaçõesView');
         this.mensagem = new mensagemView('#mensagemView');
-        this.inputData = document.querySelector('#data');
-        this.inputQuantidade = document.querySelector('#quantidade');
-        this.inputvalor = document.querySelector('#valor');
+        this.negociacoesService = new NegociacoesService();
         this.negociacoesView.update(this.negociacoes);
     }
     adiciona() {
@@ -27,8 +29,18 @@ export class NegociacaoController {
             return;
         }
         this.negociacoes.adiciona(negociacao);
+        imprimir(negociacao, this.negociacoes);
         this.limparForm();
         this.atualizaView();
+    }
+    importarDados() {
+        this.negociacoesService.obterNegociacoes()
+            .then(negociacoesDeHoje => {
+            for (let negociacao of negociacoesDeHoje) {
+                this.negociacoes.adiciona(negociacao);
+            }
+            this.negociacoesView.update(this.negociacoes);
+        });
     }
     ehDiaUtil(data) {
         return data.getDay() > DiaDaSemana.DOMINGO
@@ -46,5 +58,15 @@ export class NegociacaoController {
     }
 }
 __decorate([
-    logarTempoDeExecucao()
+    domInjector('#data')
+], NegociacaoController.prototype, "inputData", void 0);
+__decorate([
+    domInjector('#quantidade')
+], NegociacaoController.prototype, "inputQuantidade", void 0);
+__decorate([
+    domInjector('#valor')
+], NegociacaoController.prototype, "inputvalor", void 0);
+__decorate([
+    logarTempoDeExecucao(),
+    inspect
 ], NegociacaoController.prototype, "adiciona", null);

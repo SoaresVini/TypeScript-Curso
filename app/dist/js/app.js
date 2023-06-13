@@ -8,5 +8,14 @@ if (form) {
     });
 }
 else {
-    throw Error('Deu pau ai maninho');
+    throw Error('Não é possivel iniciar a aplicação');
+}
+const botaoImporta = document.querySelector('#botao-importa');
+if (botaoImporta) {
+    botaoImporta.addEventListener('click', () => {
+        controller.importarDados();
+    });
+}
+else {
+    throw Error('Botão importa não foi encontrado');
 }

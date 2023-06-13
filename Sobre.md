@@ -204,24 +204,36 @@ pai public -> public
 
 Sempre bom tipar tudo e deixar claro o modificador de acesso memso sendo public
 
-
+================
 Enumerations
 
 enum
 
 Posso criar constantes com os dias da semena e eu posso usalas em qualquer classe do meu projeto
 
-
 Metodo static, posso chamar ela direto pela instancia da classe
 
-
-decoration
+decoration - usado para o beckend ou  teste 
 
 Vou criar uma função que vai utilizada para verificar o tempo de execução
 
 posso usar tambem um performance.now() - no começo e no fim de um metodo
 
+Posso passar um parametro para decoration 
 
+Posso usar em propiedades tambem 
+
+explicação nas classes em que são usadas ou criadas
+
+interfaces
+
+seleciona a variavel e da um F2 ou clica em rename sybol
+
+Util
+
+extends tem que chamar o super no contrutor tamebem
+
+https://cursos.alura.com.br/course/typescript-tecnicas-boas-praticas/task/92118
 
 =========Programação defensiva==================
   // a data vai ser igual a que foi vai ser identica a data que esta encapsulado dentro da negociaçõa, porem em uma nova referencia. tanto faz usar o setData ou o getData

@@ -1,4 +1,5 @@
-import { Negociacao } from "../models/negociacao";
+import { escape } from "../decorations/escape.js";
+import { Negociacao } from "../models/negociacao.js";
 import { Negociacoes } from "../models/negociacoes.js";
 import { View } from "./view.js";
 
@@ -10,6 +11,8 @@ export class NegociacoesView extends View<Negociacoes>{
 
     //Fazendo com que o programador não precise ficarescrevendo e adicionando os dados as tabelas manualemnte
 
+
+    @escape
     protected templete(model: Negociacoes): string {
 
         return `
