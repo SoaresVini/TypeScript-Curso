@@ -60,6 +60,8 @@ export class NegociacaoController {
       
         this.negociacoes.adiciona(negociacao)
 
+        const calopsita = 'PIU'
+
         imprimir(negociacao,this.negociacoes)
 
         this.limparForm()
@@ -67,9 +69,20 @@ export class NegociacaoController {
 
     }
 
+    // lista vc tem algula negociação igual a aque eu quero ela vai filtrar e retorna 
     importarDados(): void{
 
-    this.negociacoesService.obterNegociacoes()
+    this.negociacoesService
+        .obterNegociacoes()
+        .then(negociacoesDeHoje => {
+            return negociacoesDeHoje.filter(negociacoesDeHoje =>{
+                return !this.negociacoes
+                .listaNegociacao()
+                .some(negociacao => negociacao
+                    .ehIgual(negociacoesDeHoje)
+                )
+            })
+        })
         .then(negociacoesDeHoje => {
             for(let negociacao of negociacoesDeHoje) {
                 this.negociacoes.adiciona(negociacao)

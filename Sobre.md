@@ -235,6 +235,28 @@ extends tem que chamar o super no contrutor tamebem
 
 https://cursos.alura.com.br/course/typescript-tecnicas-boas-praticas/task/92118
 
+
+Polimorfismo, a capcidade de um obejt ser referenciado de multiplas formas
+
+const o: Imprimivel = new Negociacao(new Date(), 1, 100)
+
+implements - interfaces - multiplas interfaces na mesma classe
+
+Extends - somente uma classe pode se extender de outra
+
+Extends - uma interface são para qauntas eu quiser
+
+Toda a interface é uma classe abstrada com metodos publicos
+
+REST ...
+
+Generics, pode sert usado para classes e interfaces 
+
+Combinado com polimorfismo e a herançaS
+
+Ambas as pastas precisam estar na mesma pasta
+
+
 =========Programação defensiva==================
   // a data vai ser igual a que foi vai ser identica a data que esta encapsulado dentro da negociaçõa, porem em uma nova referencia. tanto faz usar o setData ou o getData
 

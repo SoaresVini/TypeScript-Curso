@@ -13,3 +13,4 @@ export class View {
         this.elemento.innerHTML = templete;
     }
 }
+//# sourceMappingURL=view.js.map

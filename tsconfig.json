@@ -14,7 +14,8 @@
         "noImplicitAny": true,  
         "removeComments": true,
         "strictNullChecks": true,
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "sourceMap": true
     },
 
     // Todos os arquivos que estão em app e joga para dist/js

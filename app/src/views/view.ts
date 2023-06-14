@@ -1,8 +1,5 @@
 // T - Type defini que eu não sei o tipo dessa essa classe e que vou poder seta aquele que eu precisar na filha dela se eu precisar tipar outras partes do codigo, posso usar e adiconar qualquer outra letra 
 
-import { inspect } from "../decorations/inspect.js";
-import { logarTempoDeExecucao } from "../decorations/logar-tempo-de-execucao.js";
-
 // uma classe abstrata não te permite instanciar ela
 
 export abstract class View<T> {
